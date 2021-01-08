@@ -4,26 +4,7 @@ jobs:
   getUser:
     runs-on: ubuntu-latest
     steps:
-      - name: getUser
-        uses: satak/webrequest-action@master
-        id: get_user
-        with:
-          url: https://api.github.com/users/davidmohringmrf/repos?per_page=100&page=1
-          method: GET
-          headers: '{"Authorization": "Token ${{ secrets.GITHUB_TOKEN }}"}'
-      - run: echo $json_var
-        env:
-          json_var: ${{ steps.get_user.outputs.output }}
-  logRemainingQuota:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get Rate Limit
-        uses: octokit/request-action@v2.x
-        id: get_rate_limit
-        with:
-          route: GET /rate_limit
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: echo $json_var
-        env:
-          json_var: ${{ steps.get_rate_limit.outputs.data }}
+      - name: Get Pokemon name
+      uses: davidmohringmrf/action1@master
+        id: pokemon
+  
