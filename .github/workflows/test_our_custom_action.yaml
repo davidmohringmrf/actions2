@@ -5,6 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get Pokemon name
-        uses: davidmohringmrf/action1@master
+        uses: davidmohringmrf/actions1@master
         id: pokemon
   
